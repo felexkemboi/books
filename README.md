@@ -1,4 +1,4 @@
-# Book Repository to search books
+# Book Repository
 
 This is a book repository where you can search books
 
