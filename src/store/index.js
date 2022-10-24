@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import _ from 'lodash';    
 
 export const mainStore = defineStore({
   id: 'main',
@@ -7,7 +8,9 @@ export const mainStore = defineStore({
   }),
 
   getters: {
-    getBooks: (state) => state.books,
+    getBooks: (state) => {
+      return _.dropRight(state.books, 90);
+    }
   },
 
   actions: {

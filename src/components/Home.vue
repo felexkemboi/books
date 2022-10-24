@@ -4,12 +4,11 @@
     <input type="text" placeholder="Filter Search" v-model="query" />    
     <button type="button" @click="search">Search</button>
     <div class="loader" v-if="loading"></div>
-    <div v-else>View Books</div>
-    <ol>      
-      <li v-for="book in books" :key="book.title">        
-        {{ book }}      
-      </li>    
-    </ol>
+    <div v-else>
+      <button type="button">
+        <router-link to="/books">View Books</router-link>
+      </button>
+    </div>
   </div>
 </template>
 
