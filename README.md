@@ -1,8 +1,11 @@
-# Vue 3 + Vite
+# Book Repository to search books
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is a book repository where you can search books
 
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
-# books
+## Instructions on how to set up locally
+ ### Clone the project
+  - Clone the project using the command `git clone git@github.com:felexkemboi/books.git`
+  - In the root directory of the project(in command line), install the packages using `npm install`
+  - After installing the necessary packages,fire up the local server using the command `npm run dev`
+  - Copy the url given and open it with your favorite browser. Example `http://localhost:5173/`
+  - Happy Coding!
