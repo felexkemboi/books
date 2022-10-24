@@ -18,7 +18,7 @@ export const mainStore = defineStore({
       this.books = books;
     },
     unSetBooks() {
-        this.books = [];
+      this.books = [];
     },
   },
   persist: true,

@@ -16,21 +16,23 @@
 import { ref } from 'vue'
 import axios from 'axios'
 import { mainStore } from '../store/index';
-import { computed } from 'vue'
 
 const store = mainStore();
 const query = ref('')
 const loading = ref(false)
-const books = computed(() => store.getBooks)
 
 const search = async function () {
   const q = query.value.split(" ")
-  // Incase this fails
-  loading.value = true
-  await axios.get(`http://openlibrary.org/search.json?q=${q.length > 1 ? q.join('+') : q}`).then(response => (
-    store.setBooks(response.data.docs)
-  ))
-  loading.value = false
+
+  try {
+    loading.value = true
+    await axios.get(`http://openlibrary.org/search.json?q=${q.length > 1 ? q.join('+') : q}`).then(response => (
+      store.setBooks(response.data.docs)
+    ))
+    loading.value = false
+  } catch (error) {
+    alert("Fetching of the titles failed ", error);
+  }
   query.value = ''
 };
 
