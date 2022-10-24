@@ -3,10 +3,10 @@
     <h2>Search books</h2>    
     <input type="text" placeholder="Filter Search" v-model="query" />    
     <button type="button" @click="search">Search</button>
-    {{ query }} 
-    <div class="loader" v-if="loading"></div> 
+    <div class="loader" v-if="loading"></div>
+    <div v-else>View Books</div>
     <ol>      
-      <li v-for="book in filteredBooks" :key="book.title">        
+      <li v-for="book in books" :key="book.title">        
         {{ book }}      
       </li>    
     </ol>
@@ -16,19 +16,23 @@
 <script setup>
 import { ref } from 'vue'
 import axios from 'axios'
+import { mainStore } from '../store/index';
+import { computed } from 'vue'
 
+const store = mainStore();
 const query = ref('')
 const loading = ref(false)
-
-const filteredBooks = ref([{'title':'Enjoyment'},{'title':'Amigo'}])  
+const books = computed(() => store.getBooks)
 
 const search = async function () {
   const q = query.value.split(" ")
+  // Incase this fails
   loading.value = true
-  await axios.get(`http://openlibrary.org/search.json?q=${q.join('+')}`).then(
-    response => (console.log(response.data.docs))
-  )
+  await axios.get(`http://openlibrary.org/search.json?q=${q.length > 1 ? q.join('+') : q}`).then(response => (
+    store.setBooks(response.data.docs)
+  ))
   loading.value = false
+  query.value = ''
 };
 
 </script>
