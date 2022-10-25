@@ -1,13 +1,17 @@
 <template>
   <div class="home">    
-    <h2>Search books</h2>    
-    <input type="text" placeholder="Filter Search" v-model="query" />    
-    <button type="button" @click="search">Search</button>
-    <div class="loader" v-if="loading"></div>
-    <div v-else>
-      <button type="button">
-        <router-link to="/books">View Books</router-link>
+    <h2>Search books</h2>
+    <div class="search flex-row">
+      <input class="input" type="text" placeholder="Type the title of the book" v-model="query" />
+      <button type="button" @click="search" v-if="!loading">Search</button>
+      <button v-else type="button" class="spinner_button" disabled>
+        <svg class="loader"></svg>
       </button>
+    </div>    
+    <div>
+      <button type="button">
+      <router-link to="/books">View Books</router-link>
+    </button>
     </div>
   </div>
 </template>
@@ -43,13 +47,32 @@ const search = async function () {
   margin-top: 20px;
 }
 
+.search {
+  text-align: center;
+}
+
 .loader {
-  border: 6px solid #f3f3f3; /* Light grey */
-  border-top: 6px solid #3498db; /* Blue */
+  border: 8px solid #f3f3f3;
+  border-top: 6px solid #55db34;
   border-radius: 50%;
   width: 20px;
   height: 20px;
   animation: spin 1s linear infinite;
+}
+
+.spinner_button {
+  margin-top: 10px;
+  min-height: 50px;
+  min-width: 80px;
+}
+
+input {
+  border: 1px solid rgb(135, 170, 71);
+  border-radius: 10px;
+  min-height: 45px;
+  min-width: 70vh;
+  text-align: center;
+  margin: 20px;
 }
 
 @keyframes spin {
