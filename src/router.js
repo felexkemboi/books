@@ -19,6 +19,11 @@ const routes = [
 		name: 'books',
 		component: Books,
 	},
+	{
+		path: '/:catchAll(.*)*',
+		redirect: '/',
+		name: "PageNotFound",
+	},
 ];
 
 const router = createRouter({

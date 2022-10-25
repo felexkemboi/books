@@ -9,7 +9,7 @@
       </button>
     </div>    
     <div>
-      <button type="button">
+      <button type="button" :disabled="loading">
       <router-link to="/books">View Books</router-link>
     </button>
     </div>

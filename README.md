@@ -9,3 +9,8 @@ This is a book repository where you can search books
   - After installing the necessary packages,fire up the local server using the command `npm run dev`
   - Copy the url given and open it with your favorite browser. Example `http://localhost:5173/`
   - Happy Coding!
+
+
+![Optional Text](./public/pictures/search.png)
+![Optional Text](./public/pictures/searching.png)
+![Optional Text](./public/pictures/books.png)
