@@ -10,7 +10,12 @@ This is a book repository where you can search books
   - Copy the url given and open it with your favorite browser. Example `http://localhost:5173/`
   - Happy Coding!
 
-
-![Optional Text](./public/pictures/search.png)
-![Optional Text](./public/pictures/searching.png)
-![Optional Text](./public/pictures/books.png)
+## Instructions on how to use the app
+ ### This is the landing page where you can type the title of the book
+  ![search](./public/pictures/search.png)
+ 
+ ### Note the spinner when loading/fetching records from the API
+  ![Searching](./public/pictures/searching.png)
+ 
+ ### This is the page showing the list of the books got(Note the `Go Back`) button which you can use to go back to the home page where you can search again
+  ![books](./public/pictures/books.png)
