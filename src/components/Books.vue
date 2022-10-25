@@ -4,7 +4,7 @@
         <p>There are no books click the button below to go back</p>
       </div>
       <li v-for="(book, index) in books" :key="book.title">
-        {{ index }} - {{ book.title }}
+        {{ book.title }}
       </li>  
       <button type="button"><router-link to="/">Go Back</router-link></button>
 </template>
