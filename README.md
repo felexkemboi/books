@@ -21,4 +21,4 @@ This is a book repository where you can search books
   ![books](./public/pictures/books.png)
 
  - For the case where there are no books,this is how it looks(you need to go back and search again)
-  ![Searching](./public/pictures/No%20books.png)
+  ![Searching](./public/pictures/no_books.png)
